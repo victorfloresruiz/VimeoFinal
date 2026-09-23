@@ -1,21 +1,378 @@
-* {
-  box-sizing: border-box;
+/* Si tienes el archivo de la fuente real, descomenta esto y pon la ruta:
+@font-face {
+  font-family: "ABC Repro";
+  src: url("fuentes/ABCRepro-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+*/
+
+:root {
+  --bg: #fbfcfe;
+  --ink: #0a0e12;
+  --cyan: #17d5ff;
+  --font: "ABC Repro", "Inter Tight", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
   margin: 0;
-  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
 }
 
-html,
-body {
+a, button { font: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.contenedor-principal { max-width: 466px; margin: 0 auto; padding-bottom: 0; }
+
+/* ---------- Header ---------- */
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px 18px;
+}
+
+.logotipo {
+  font-size: 26px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.menu-acciones { display: flex; align-items: flex-start; gap: 22px; }
+
+.accion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+}
+.accion i { font-size: 22px; }
+.accion--acceso span { max-width: 60px; }
+
+/* ---------- Hero ---------- */
+.portada {
+  position: relative;
+  margin: 0 16px;
+  min-height: 553px;
+  border-radius: 24px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  background: #5b5346;
+}
+
+.portada__imagen {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-body {
-  overflow-x: hidden;
+.portada__sombra {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 18, 0.5);
 }
 
-/*HEADER*/
-header{
-    display: flex;
-    
+.portada__contenido {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 128px 24px 110px;
+}
+
+.portada__antetitulo {
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.portada__titulo {
+  margin: 0 0 20px;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.portada__texto {
+  margin: 0 0 26px;
+  max-width: 330px;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: var(--cyan);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.enlace-destacado {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.boton-reproducir {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 163px;
+  height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(210, 210, 210, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ---------- Confianza + logos ---------- */
+.confianza { padding: 64px 0 0; }
+
+.confianza__titulo {
+  margin: 0 auto;
+  max-width: 320px;
+  padding: 0 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.marcas { margin-top: 46px; }
+
+.marcas__estatico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 16px;
+}
+
+.marca-logo {
+  max-width: 140px;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+/* ---------- Diseñado para su forma de trabajar ---------- */
+.destacado {
+  position: relative;
+  overflow: hidden;
+  margin-top: 38px;
+  padding: 52px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Forma decorativa de fondo */
+.destacado::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 150%;
+  height: 100%;
+  background: #f3f7fb;
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  z-index: 0;
+}
+
+.destacado__titulo {
+  position: relative;
+  margin: 0 0 18px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.destacado__texto {
+  position: relative;
+  margin: 0 0 32px;
+  font-size: 17px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: #4c5864;
+}
+
+.destacado .boton { position: relative; }
+
+/* ---------- La plataforma que impulsa su estrategia de video ---------- */
+.plataforma {
+  background: #141a20;
+  color: #fff;
+  padding: 34px 20px 50px;
+}
+
+.plataforma__titulo {
+  margin: 0 0 38px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.tarjeta + .tarjeta { 
+  margin-top: 42px; 
+}
+
+.plataforma__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  object-fit: cover;
+  background: #3b3b42;
+}
+
+.plataforma__cuerpo { 
+  padding: 0 9px; 
+}
+
+.plataforma__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.plataforma__texto {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #9aa3ad;
+}
+
+/* ---------- Una solución de video perfecta para todos ---------- */
+.soluciones { padding: 32px 20px 40px; }
+
+.soluciones__video {
+  display: block;
+  width: 100%;
+  height: 240px;
+  border-radius: 18px;
+  object-fit: cover;
+  background: #c9c7bb;
+}
+
+.soluciones__nombre {
+  margin: 22px 0 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}
+
+.soluciones__cargo {
+  margin: 1px 0 0;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}
+
+.soluciones__titulo {
+  margin: 40px 0 18px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+}
+
+.soluciones__texto {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #3d4751;
+}
+
+.boton--oscuro { background: #141a20; color: #fff; }
+
+/* Lista de perfiles */
+.soluciones__lista { list-style: none; margin: 56px 0 0; padding: 0 12px; }
+
+.soluciones__elemento { display: flex; align-items: flex-start; gap: 20px; }
+.soluciones__elemento + .soluciones__elemento { margin-top: 38px; }
+
+.soluciones__icono {
+  flex: none;
+  width: 24px;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.soluciones__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.soluciones__enlace i { font-size: 11px; }
+
+.soluciones__descripcion {
+  margin: 11px 0 0;
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #3d4751;
 }

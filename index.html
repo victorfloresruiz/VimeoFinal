@@ -1,143 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vimeo</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vimeo - Sus videos, a su manera</title>
+
+<!-- Iconos (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Tipografías: Inter Tight (sustituye a ABC Repro) e IBM Plex Mono para la etiqueta superior -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,800&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <header>
-            <div>
-                <img src="imagenes/vimeo.svg" alt="">
-            </div>
+  <div class="contenedor-principal">
 
-            <div>
-                <div>
-                    <img src="" alt="">
-                    <p>Comunicarse con ventas</p>
-                </div>
+    <header class="cabecera">
+      <img src="/imagenes/vimeo.svg" alt="" class="logotipo">
 
-                <div>
-                    <img src="" alt="">
-                    <p>Iniciar<br>sesión</p>
-                </div>
-            </div>
-        </header>
+      <nav class="menu-acciones">
+        <a class="accion" href="#">
+          <i class="fa-regular fa-comments"></i>
+          <span>Comunicarse con Ventas</span>
+        </a>
+        <a class="accion accion--acceso" href="#">
+          <i class="fa-regular fa-user"></i>
+          <span>Iniciar sesión</span>
+        </a>
+      </nav>
+    </header>
 
-        <section>
-            <div>
-                <h2>SU PLATAFORMA DE VIDEO COMPLETA</h2>
-                <h1>Sus videos,<br>a su manera</h1>
-                <p>La plataforma sin anuncios de Vimeo le ofrece todo lo que necesita para alojar, gestionar y compartir videos de alta calidad</p>
-                <button>Ver los planes</button>
-                <a href="">Probar gratis</a>
-                <button>Reproducir</button>
-            </div>
+    <section class="portada">
+      <!-- Cambia esta imagen por la tuya (recomendado: 900 x 1100 px) -->
+      <img class="portada__imagen" src="/imagenes/imagen-escribir.jpg" alt="">
+      <div class="portada__sombra"></div>
 
-            <div>
-                <h1>Con la confianza de más de 287 millones de creativos, profesionales del marketing y empresas</h1>
-            </div>
+      <div class="portada__contenido">
+        <p class="portada__antetitulo">Su plataforma de video completa</p>
+        <h1 class="portada__titulo">Sus videos,<br>a su manera</h1>
+        <p class="portada__texto">La plataforma sin anuncios de Vimeo le ofrece todo lo que necesita para alojar, gestionar y compartir videos de alta calidad.</p>
 
-            <div>
-                <img src="" alt="">
-            </div>
-        </section>
+        <a class="boton" href="#">Ver los planes <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="enlace-destacado" href="#">Probar gratis <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
 
-        <section>
-            <div>
-                <h1>Diseñado para su forma de trabajar</h1>
-                <p>Desde SSO y controles de privacidad hasta transmisión en vivo, funciones avanzadas de IA y mucho más: Vimeo Enterprise se puede personalizar para satisfacer las necesidades de su empresa.</p>
-                <button>Solicitar una demostración</button>
-            </div>
-        </section>
+      <button class="boton-reproducir" type="button">Reproducir <i class="fa-solid fa-play"></i></button>
+    </section>
 
-        <section>
-            <h1>La plataforma que impulsa su estrategia de video</h1>
-            
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Alojamiento en alta calidad y sin anuncios</a>
-                <p>Asegúrese de que sus videos se reproduzcan con la máxima resolución y siempre sin anuncios. Sin distracciones de la competencia ni sugerencias aleatorias.</p>
-            </div>
+    <section class="confianza">
+      <h2 class="confianza__titulo">Con la confianza de más de 287 millones de creativos, profesionales del marketing y empresas</h2>
 
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Colabore con cualquier persona</a>
-                <p>Comparta cortes para su revisión, sea preciso con comentarios con códigos de tiempo y gestione el historial de versiones en una videoteca organizada.</p>
-            </div>
+      <div class="marcas">
+        <div class="marcas__estatico">
+          <img class="marca-logo" src="/imagenes/marca1.svg" alt="Logo marca 1">
+          <img class="marca-logo" src="/imagenes/marca2.svg" alt="Logo marca 2">
+        </div>
+      </div>
+    </section>
 
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Inserte el reproductor en cualquier página</a>
-                <p>Dirija el tráfico a su sitio web con el reproductor personalizable e insertable de Vimeo. Comparta en las redes sociales en cuestión de segundos.</p>
-            </div>
+    <section class="destacado">
+      <h2 class="destacado__titulo">Diseñado para su<br>forma de trabajar</h2>
+      <p class="destacado__texto">Desde SSO y controles de privacidad hasta transmisión en vivo, funciones avanzadas de IA y mucho más: Vimeo Enterprise se puede personalizar para satisfacer las necesidades de su empresa.</p>
+      <a class="boton" href="#">Solicitar una demostración <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
 
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Mantenga sus videos seguros</a>
-                <p>Mantenga su contenido seguro con gestión de acceso detallada y configuración de privacidad avanzada, como la protección por contraseña.</p>
-            </div>
+    <section class="plataforma">
+      <h2 class="plataforma__titulo">La plataforma que impulsa<br>su estrategia de video</h2>
 
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Venda su contenido</a>
-                <p>Monetice contenidos on-demand e incluso cree una plataforma de suscripción con herramientas sencillas adaptables a su modelo de negocio.</p>
-            </div>
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img1-negra.jpg" alt="Alojamiento en alta calidad">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Alojamiento en alta calidad y sin anuncios <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Asegúrese de que sus videos se reproduzcan con la máxima resolución y siempre sin anuncios. Sin distracciones de la competencia ni sugerencias aleatorias.</p>
+        </div>
+      </article>
 
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <a href="">Transmita en vivo con confianza</a>
-                <p>Organice eventos virtuales, seminarios web, transmisiones en vivo y mucho más con el conjunto de herramientas de transmisión en vivo fáciles de usar de Vimeo.</p>
-            </div>
-        </section>
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img2-negra.jpg" alt="Colaboración en video">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Colabore con cualquier persona <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Comparta cortes para su revisión, sea preciso con comentarios con códigos de tiempo y gestione el historial de versiones en una videoteca organizada.</p>
+        </div>
+      </article>
 
-        <section>
-            <div>
-                <img src="" alt="">
-                <h1>Cole Wembley</h1>
-                <p>Cineasta seleccionado por el personal</p>
-                <p>Miembro desde 2011</p>
-            </div>
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img3-negra.jpg" alt="Reproductor de video">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Inserte el reproductor en cualquier página <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Dirija el tráfico a su sitio web con el reproductor personalizable e insertable de Vimeo. Comparta en las redes sociales en cuestión de segundos.</p>
+        </div>
+      </article>
 
-            <div>
-                <h1>Una solución de video perfecta para todos</h1>
-                <p>Tanto si es un profesional experimentado como si acaba de empezar, la plataforma intuitiva de Vimeo le permite subir, gestionar y compartir sus vídeos con un control total sobre la privacidad y la distribución.</p>
-                <button>Consultar nuestros planes</button>
-            </div>
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img4-negra.jpg" alt="Seguridad de video">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Mantenga sus videos seguros <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Mantenga su contenido seguro con gestión de acceso detallada y configuración de privacidad avanzada, como la protección por contraseña.</p>
+        </div>
+      </article>
 
-            <div>
-                <div>
-                    <h1>Profesionales de los videos</h1>
-                    <p>Presente trabajos, colabore con clientes y conéctese con una comunidad apasionada de cineastas y creativos.</p>
-                </div>
-                <div>
-                    <h1>Equipos de marketing</h1>
-                    <p>Eleve su marca con videos de alta calidad y amplie su alcance con precisión y control.</p>
-                </div>
-                <div>
-                    <h1>Equipos de comunicación</h1>
-                    <p>Centralice la comunación y maximice la interacción con eventos en vivo de alta calidad y alojamiento de video seguro.</p>
-                </div>
-                <div>
-                    <h1>Líderes de aprendizaje y desarrollo</h1>
-                    <p>Escale la capacitación con videos interactivos impulsados por IA que se integran con cualquier LMS para atraer a equipos globales en varios idiomas.</p>
-                </div>
-                <div>
-                    <h1>Empresas de contenido</h1>
-                    <p>Monetice sus vídeos con todo lo que necesita para aumentar y gestionar su audiencia.</p>
-                </div>
-                <div>
-                    <h1>Organizaciones empresariales</h1>
-                    <p>Agilice los flujos de trabajo de video en toda su empresa con soluciones personalizables que se adaptan a las necesidades del negocio.</p>
-                </div>
-            </div>
-        </section>
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img5-negra.jpg" alt="Vender contenido">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Venda su contenido <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Monetice contenidos on-demand e incluso cree una plataforma de suscripción con herramientas sencillas adaptables a su modelo de negocio.</p>
+        </div>
+      </article>
+
+      <article class="tarjeta">
+        <img class="plataforma__video" src="/imagenes/img6-negra.jpg" alt="Transmisión en directo">
+        <div class="plataforma__cuerpo">
+          <a class="plataforma__enlace" href="#">Transmita en vivo con confianza <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="plataforma__texto">Organice eventos virtuales, seminarios web, transmisiones en vivo y mucho más con el conjunto de herramientas de transmisión en vivo fáciles de usar de Vimeo.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="soluciones">
+      <img class="soluciones__video" src="/imagenes/colewembley.jpg" alt="">
+
+      <div class="soluciones__autor">
+        <p class="soluciones__nombre">Cole Webley</p>
+        <p class="soluciones__cargo">Cineasta seleccionado por el personal<br>Miembro desde 2011</p>
+      </div>
+
+      <h2 class="soluciones__titulo">Una solución de video perfecta para todos</h2>
+      <p class="soluciones__texto">Tanto si es un profesional experimentado como si acaba de empezar, la plataforma intuitiva de Vimeo le permite subir, gestionar y compartir sus videos con un control total sobre la privacidad y la distribución.</p>
+      <a class="boton boton--oscuro" href="#">Consultar nuestros planes <i class="fa-solid fa-arrow-right"></i></a>
+
+      <ul class="soluciones__lista">
+        <li class="soluciones__elemento">
+          <i class="fa-solid fa-video soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Profesionales de los videos <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Presente trabajos, colabore con clientes y conéctese con una comunidad apasionada de cineastas y creativos.</p>
+          </div>
+        </li>
+        <li class="soluciones__elemento">
+          <i class="fa-solid fa-chart-line soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Equipos de marketing <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Eleve su marca con videos de alta calidad y amplíe su alcance con precisión y control.</p>
+          </div>
+        </li>
+        <li class="soluciones__elemento">
+          <i class="fa-solid fa-person-chalkboard soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Equipos de comunicación <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Centralice la comunicación y maximice la interacción con eventos en vivo de alta calidad y alojamiento de video seguro.</p>
+          </div>
+        </li>
+        <li class="soluciones__elemento">
+          <i class="fa-solid fa-book-open soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Líderes de aprendizaje y desarrollo <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Escale la capacitación con videos interactivos impulsados por IA que se integran con cualquier LMS para atraer a equipos globales en varios idiomas.</p>
+          </div>
+        </li>
+        <li class="soluciones__elemento">
+          <i class="fa-solid fa-circle-nodes soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Empresas de contenido <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Monetice sus videos con todo lo que necesita para aumentar y gestionar su audiencia.</p>
+          </div>
+        </li>
+        <li class="soluciones__elemento">
+          <i class="fa-regular fa-building soluciones__icono"></i>
+          <div>
+            <a class="soluciones__enlace" href="#">Organizaciones empresariales <i class="fa-solid fa-arrow-right"></i></a>
+            <p class="soluciones__descripcion">Agilice los flujos de trabajo de video en toda su empresa con soluciones personalizables que se adaptan a las necesidades del negocio.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div>
 </body>
 </html>
