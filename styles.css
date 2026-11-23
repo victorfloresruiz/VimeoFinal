@@ -988,3 +988,698 @@ button {
 .im {
   max-width: 320px;
 }
+
+.menu-escritorio,
+.acciones-escritorio,
+.descubre {
+  display: none;
+}
+
+/* =========================================================
+   ESCRITORIO (DESKTOP)
+   Todo lo anterior es el diseño móvil y se deja intacto.
+   A partir de aquí, solo reglas dentro de un @media que
+   sobrescriben o añaden estilos a partir de 1024px.
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+  .pagina {
+    max-width: 1440px;
+  }
+
+
+  /* ---------- CABECERA ---------- */
+
+  .cabecera {
+    gap: 40px;
+    padding: 24px 40px;
+  }
+
+  .cabecera > img {
+    height: 28px;
+    width: auto;
+  }
+
+  /* Ocultamos las acciones móviles (icono + texto apilados) */
+  .acciones {
+    display: none;
+  }
+
+  .menu-escritorio {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .menu-escritorio a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #0a0e12;
+    text-decoration: none;
+  }
+
+  .menu-escritorio i {
+    font-size: 10px;
+    color: #5b6570;
+  }
+
+  .acciones-escritorio {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+  }
+
+  .enlace-ventas-escritorio {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0a0e12;
+    text-decoration: none;
+  }
+
+  .boton-unirse-escritorio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 6px 6px 18px;
+    border-radius: 24px;
+    background: #17d5ff;
+    color: #0a0e12;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .flecha-unirse-escritorio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #0a0e12;
+    color: #fff;
+    font-size: 11px;
+  }
+
+  .icono-escritorio {
+    font-size: 18px;
+    color: #0a0e12;
+  }
+
+
+  /* ---------- PORTADA ---------- */
+
+  .portada {
+    margin: 0 24px;
+    min-height: 720px;
+    display: flex;
+    border-radius: 32px;
+  }
+
+  .contenido-portada {
+    flex: 1;
+    justify-content: center;
+    padding: 0 40px;
+  }
+
+  .subtitulo-portada {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+
+  .titulo-portada {
+    margin-bottom: 28px;
+    font-size: 88px;
+    line-height: 0.95;
+  }
+
+  .texto-portada {
+    max-width: 580px;
+    margin-bottom: 36px;
+    font-size: 20px;
+  }
+
+  .acciones-portada {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .acciones-portada .boton {
+    width: auto;
+    max-width: none;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .acciones-portada .enlace {
+    margin-top: 0;
+  }
+
+  /* El botón "Reproducir" solo existe en móvil */
+  .reproducir {
+    display: none;
+  }
+
+  /* La tarjeta "Descubra..." solo existe en escritorio */
+  .descubre {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    max-width: 320px;
+    padding: 16px 24px 16px 16px;
+    border-radius: 20px;
+    background: rgba(230, 230, 230, 0.92);
+    color: #0a0e12;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .descubre-play {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #17d5ff;
+    color: #0a0e12;
+    font-size: 16px;
+  }
+
+  .descubre p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+
+  /* ---------- CONFIANZA ---------- */
+
+  .confianza {
+    padding: 96px 40px 0;
+  }
+
+  .titulo-confianza {
+    max-width: 780px;
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .logos {
+    gap: 80px;
+    margin-top: 56px;
+  }
+
+  .logos img {
+    width: 150px;
+  }
+
+
+  /* ---------- CARACTERISTICAS ---------- */
+
+  .caracteristicas {
+    margin-top: 40px;
+    padding: 96px 40px 110px;
+  }
+
+  .titulo-caracteristicas {
+    margin-bottom: 24px;
+    font-size: 60px;
+    line-height: 1.05;
+  }
+
+  .texto-caracteristicas {
+    max-width: 720px;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+
+  .caracteristicas .boton {
+    width: auto;
+    max-width: none;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+
+  /* ---------- PLATAFORMA (rejilla de 3 columnas) ---------- */
+
+  .plataforma {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 64px;
+    padding: 96px 40px 110px;
+  }
+
+  .titulo-plataforma {
+    grid-column: 1 / -1;
+    margin: 0 0 16px;
+    font-size: 48px;
+  }
+
+  .elemento + .elemento {
+    margin-top: 0;
+  }
+
+  .video-plataforma {
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  .contenido-elemento {
+    padding: 0 4px;
+  }
+
+  .enlace-plataforma {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+
+  .texto-plataforma {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+
+  /* ---------- SOLUCION (2 columnas + rejilla de 3) ---------- */
+
+  .solucion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 80px;
+    padding: 96px 40px 110px;
+  }
+
+  .video-solucion {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    height: 520px;
+    border-radius: 24px;
+  }
+
+  .autor-solucion {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .titulo-solucion {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    margin: 0 0 24px;
+    font-size: 44px;
+    line-height: 1.1;
+  }
+
+  .texto-solucion {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0 0 32px;
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .solucion > .boton {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .lista-solucion {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px 48px;
+    margin: 96px 0 0;
+    padding: 0;
+  }
+
+  .elemento-solucion + .elemento-solucion {
+    margin-top: 0;
+  }
+
+
+  /* ---------- TESTIMONIOS ---------- */
+
+  .testimonios {
+    padding: 96px 0 110px;
+  }
+
+  .titulo-testimonios {
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+
+  .testimonio {
+    width: 620px;
+    padding: 48px 56px 40px;
+    border-radius: 28px;
+  }
+
+  .cita-testimonio {
+    font-size: 34px;
+  }
+
+  .texto-testimonio {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .estrellas-testimonio {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+
+  .autor-testimonio {
+    margin-top: 28px;
+  }
+
+  .avatar-testimonio {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nombre-testimonio {
+    font-size: 16px;
+  }
+
+
+  /* ---------- IA ---------- */
+
+  .ia {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    column-gap: 24px;
+    padding: 96px 40px 96px;
+  }
+
+  .titulo-ia {
+    grid-column: 1 / -1;
+    margin-bottom: 56px;
+    font-size: 48px;
+  }
+
+  .titulo-ia i {
+    font-size: 36px;
+  }
+
+  .video-ia {
+    grid-column: 1;
+    height: 540px;
+    border-radius: 24px;
+  }
+
+  .tarjeta-ia {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 40px 36px 36px;
+    border-radius: 24px;
+  }
+
+  .titulo-tarjeta-ia {
+    font-size: 30px;
+  }
+
+  .texto-tarjeta-ia {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .tarjeta-ia .boton {
+    width: auto;
+    max-width: none;
+    align-self: flex-start;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .acordeon {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    margin-top: 56px;
+  }
+
+  .elemento-acordeon {
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+  }
+
+  .titulo-acordeon {
+    font-size: 20px;
+  }
+
+
+  /* ---------- VIDEO FINAL ---------- */
+
+  .cierre {
+    padding: 40px 40px 80px;
+  }
+
+  .video-cierre {
+    height: 620px;
+    border-radius: 24px;
+  }
+
+
+  /* ---------- SEGURIDAD ---------- */
+
+  .seguridad {
+    padding: 40px 40px 110px;
+  }
+
+  .titulo-seguridad {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    font-size: 48px;
+  }
+
+  .texto-seguridad {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .boton-seguridad {
+    max-width: 340px;
+  }
+
+  .separador-seguridad {
+    max-width: 1100px;
+    margin: 88px auto 56px;
+  }
+
+  .rejilla-seguridad {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .rejilla-seguridad i {
+    font-size: 30px;
+  }
+
+
+  /* ---------- COMUNIDAD ---------- */
+
+  .comunidad {
+    padding-bottom: 110px;
+  }
+
+  .titulo-comunidad {
+    max-width: 900px;
+    margin: 88px auto 24px;
+    font-size: 56px;
+  }
+
+  .texto-comunidad {
+    max-width: 820px;
+    margin: 0 auto 36px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .enlace-comunidad {
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    margin: 0 auto 56px;
+  }
+
+  .video-comunidad {
+    width: calc(100% - 80px);
+    height: 580px;
+    margin: 0 40px;
+    border-radius: 24px;
+  }
+
+
+  /* ---------- NOVEDADES (2 tarjetas en fila) ---------- */
+
+  .novedades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    padding: 0 40px 110px;
+  }
+
+  .barra-novedades {
+    grid-column: 1 / -1;
+    margin: 0 -40px;
+  }
+
+  .titulo-novedades {
+    grid-column: 1 / -1;
+    margin: 88px 0 48px;
+    font-size: 48px;
+  }
+
+  .tarjeta-novedades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 40px 32px 32px;
+  }
+
+  .tarjeta-novedades + .tarjeta-novedades {
+    margin-top: 0;
+  }
+
+  .texto-novedad {
+    max-width: 460px;
+    font-size: 20px;
+  }
+
+  .boton-novedad {
+    width: auto;
+    max-width: none;
+    gap: 40px;
+  }
+
+  .imagen-novedad {
+    height: 340px;
+    margin-top: 32px;
+    border-radius: 14px;
+  }
+
+
+  /* ---------- PROBAR GRATIS ---------- */
+
+  .empezar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 96px 40px 0;
+  }
+
+  .empezar h2 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .enlaces {
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+  }
+
+  .empezar .unirse {
+    width: 220px;
+    margin-top: 0;
+  }
+
+
+  /* ---------- ATENCION AL CLIENTE ---------- */
+
+  .soporte {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 80px;
+    align-items: start;
+    padding: 72px 40px 90px;
+  }
+
+  .soporte h2 {
+    grid-column: 1;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .soporte p {
+    grid-column: 1;
+    max-width: 700px;
+  }
+
+  .soporte .unirse {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 340px;
+    margin-top: 0;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    padding: 56px 40px 56px;
+    border-top: 1px solid #e0e4ea;
+  }
+
+  .menus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    padding: 0;
+  }
+
+  .fila {
+    height: auto;
+  }
+
+  .fila i {
+    display: none;
+  }
+
+  .fila h3 {
+    font-size: 18px;
+  }
+
+  .redes {
+    margin-top: 56px;
+  }
+
+  .copy {
+    margin-top: 40px;
+  }
+
+}

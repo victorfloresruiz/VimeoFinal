@@ -19,6 +19,31 @@
 
     <img src="/imagenes/vimeo.svg" alt="">
 
+    <!-- Menú visible solo en escritorio -->
+    <nav class="menu-escritorio">
+      <a href="#">Funciones <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#">Casos de uso <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#">Enterprise <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#">Conocer <i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#">Precio</a>
+      <a href="#">What's new</a>
+    </nav>
+
+    <!-- Acciones visibles solo en escritorio -->
+    <div class="acciones-escritorio">
+      <a class="enlace-ventas-escritorio" href="#">Comunicarse con Ventas</a>
+
+      <a class="boton-unirse-escritorio" href="#">
+        Unirse
+        <span class="flecha-unirse-escritorio"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="icono-escritorio" href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+      <a class="icono-escritorio" href="#"><i class="fa-regular fa-rectangle-list"></i></a>
+      <a class="icono-escritorio" href="#"><i class="fa-regular fa-user"></i></a>
+    </div>
+
+    <!-- Acciones visibles solo en móvil -->
     <nav class="acciones">
 
       <a class="accion" href="#">
@@ -55,22 +80,33 @@
         La plataforma sin anuncios de Vimeo le ofrece todo lo que necesita para alojar, gestionar y compartir videos de alta calidad.
       </p>
 
-      <a class="boton" href="#">
-        Ver los planes
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
+      <div class="acciones-portada">
 
-      <a class="enlace" href="#">
-        Probar gratis
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
+        <a class="boton" href="#">
+          Ver los planes
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a class="enlace" href="#">
+          Probar gratis
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
 
     </div>
 
+    <!-- Visible solo en móvil -->
     <button class="reproducir" type="button">
       Reproducir
       <i class="fa-solid fa-play"></i>
     </button>
+
+    <!-- Visible solo en escritorio -->
+    <a class="descubre" href="#">
+      <span class="descubre-play"><i class="fa-solid fa-play"></i></span>
+      <p>Descubra por qué a millones de personas les encanta Vimeo</p>
+    </a>
 
   </section>
 
@@ -741,3 +777,7 @@
     </span>
   </div>
 </footer>
+
+</div>
+</body>
+</html>
