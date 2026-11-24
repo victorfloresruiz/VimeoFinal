@@ -1,40 +1,29 @@
-body {
-  margin: 0;
-  background: #fbfcfe;
-  color: #0a0e12;
-  font-family: "Inter Tight", sans-serif;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #fbfcfe;
+  background-color: #fbfcfe;
   color: #0a0e12;
-  font-family: "ABC Repro", "Inter Tight", system-ui, sans-serif;
+  font-family: "Inter Tight", sans-serif;
+  overflow-x: hidden;
 }
 
-a,
-button {
-  font: inherit;
+a, button {
+  font-family: inherit;
 }
 
 .pagina {
   max-width: 466px;
   margin: 0 auto;
-  padding-bottom: 0;
 }
-
-
-/* CABECERA */
 
 .cabecera {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 26px 18px;
+  padding: 22px 26px 18px 26px;
 }
 
 .acciones {
@@ -64,70 +53,54 @@ button {
   max-width: 60px;
 }
 
-
-/* PORTADA */
-
 .portada {
   position: relative;
   margin: 0 16px;
   min-height: 553px;
   border-radius: 24px;
-  overflow: hidden;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
-  background: #5b5346;
-}
-
-.imagen-portada {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sombra-portada {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(10, 14, 18, 0.5);
+  background-image: linear-gradient(rgba(10, 14, 18, 0.5), rgba(10, 14, 18, 0.5)), url("/imagenes/imagen-escribir.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .contenido-portada {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 128px 24px 110px;
+  padding: 128px 24px 110px 24px;
 }
 
 .subtitulo-portada {
-  margin: 0 0 14px;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 14px;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .titulo-portada {
-  margin: 0 0 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 44px;
   font-weight: 500;
   line-height: 1.08;
-  letter-spacing: -0.05em;
 }
 
 .texto-portada {
-  margin: 0 0 26px;
+  margin-top: 0;
+  margin-bottom: 26px;
   max-width: 330px;
   font-size: 17px;
   line-height: 1.4;
-  letter-spacing: -0.02em;
+}
+
+.acciones-portada {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .boton {
@@ -139,7 +112,7 @@ button {
   height: 48px;
   padding: 0 16px;
   border-radius: 12px;
-  background: #17d5ff;
+  background-color: #17d5ff;
   color: #0a0e12;
   font-size: 16px;
   font-weight: 500;
@@ -147,11 +120,11 @@ button {
 }
 
 .enlace {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 26px;
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
   text-decoration: none;
 }
@@ -160,26 +133,23 @@ button {
   position: absolute;
   right: 24px;
   bottom: 24px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   width: 163px;
   height: 48px;
   padding: 0 20px;
-  border: 0;
+  border: none;
   border-radius: 16px;
-  background: rgba(210, 210, 210, 0.6);
+  background-color: rgba(210, 210, 210, 0.6);
   color: #0a0e12;
   font-weight: 500;
   cursor: pointer;
 }
 
-
-/* CONFIANZA */
-
 .confianza {
-  padding: 64px 0 0;
+  padding-top: 64px;
 }
 
 .titulo-confianza {
@@ -189,32 +159,40 @@ button {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: -0.02em;
   text-align: center;
 }
 
 .logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+  overflow: hidden;
+  width: 100%;
   margin-top: 46px;
 }
 
-.logos img {
-  width: 120px;
-  height: auto;
+.pista-logos {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: moverLogos 25s linear infinite;
 }
 
+.pista-logos img {
+  width: 120px;
+  height: auto;
+  margin-right: 40px;
+}
 
-
-/* CARACTERISTICAS */
+@keyframes moverLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 .caracteristicas {
-  position: relative;
-  overflow: hidden;
   margin-top: 38px;
-  padding: 52px 28px 40px;
+  padding: 52px 28px 40px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,72 +200,40 @@ button {
 }
 
 .titulo-caracteristicas {
-  position: relative;
-  margin: 0 0 18px;
+  margin-top: 0;
+  margin-bottom: 18px;
   font-size: 32px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.04em;
 }
 
 .texto-caracteristicas {
-  position: relative;
-  margin: 0 0 32px;
+  margin-top: 0;
+  margin-bottom: 32px;
   font-size: 17px;
   line-height: 1.45;
-  letter-spacing: -0.01em;
   color: #4c5864;
 }
 
-.caracteristicas .boton {
-  position: relative;
-}
-
-
-/* PLATAFORMA */
-  .elemento {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .contenido-elemento {
-    flex: 1;
-  }
-
-  .boton-plataforma {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 32px;
-    padding: 18px 20px;
-    border-radius: 12px;
-    background: #2a323c;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.35;
-    text-decoration: none;
-  }
-
-  .boton-plataforma i {
-    flex: none;
-    margin-left: 16px;
-    font-size: 14px;
-  }
-
 .plataforma {
-  background: #141a20;
-  color: #fff;
-  padding: 34px 20px 50px;
+  background-color: #141a20;
+  color: #ffffff;
+  padding: 34px 20px 50px 20px;
 }
 
 .titulo-plataforma {
-  margin: 0 0 38px;
+  margin-top: 0;
+  margin-bottom: 38px;
   font-size: 23px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.03em;
   text-align: center;
+}
+
+.elemento {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 42px;
 }
 
 .video-plataforma {
@@ -295,8 +241,7 @@ button {
   width: 100%;
   height: 320px;
   border-radius: 16px;
-  object-fit: cover;
-  background: #3b3b42;
+  background-color: #3b3b42;
 }
 
 .contenido-elemento {
@@ -304,33 +249,46 @@ button {
 }
 
 .enlace-plataforma {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 22px;
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
 }
 
 .texto-plataforma {
-  margin: 20px 0 0;
+  margin-top: 20px;
+  margin-bottom: 0;
   font-size: 16px;
   line-height: 21px;
-  letter-spacing: -0.01em;
   color: #9aa3ad;
 }
 
-.elemento + .elemento {
-  margin-top: 42px;
+.boton-plataforma {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background-color: #2a323c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
 }
 
-
-/* SOLUCION */
+.boton-plataforma i {
+  margin-left: 16px;
+  font-size: 14px;
+}
 
 .solucion {
-  padding: 32px 20px 40px;
+  padding: 32px 20px 40px 20px;
 }
 
 .video-solucion {
@@ -338,49 +296,57 @@ button {
   width: 100%;
   height: 240px;
   border-radius: 18px;
-  object-fit: cover;
-  background: #c9c7bb;
+  background-color: #c9c7bb;
 }
 
 .nombre-solucion {
-  margin: 22px 0 0;
+  margin-top: 22px;
+  margin-bottom: 0;
   font-size: 17px;
   font-weight: 500;
   line-height: 21px;
-  letter-spacing: -0.01em;
 }
 
 .rol-solucion {
-  margin: 1px 0 0;
+  margin-top: 1px;
+  margin-bottom: 0;
   font-size: 16px;
   line-height: 21px;
-  letter-spacing: -0.01em;
+}
+
+.rol-solucion span {
+  display: block;
+}
+
+.rol-solucion .separador-rol {
+  display: none;
 }
 
 .titulo-solucion {
-  margin: 40px 0 18px;
+  margin-top: 40px;
+  margin-bottom: 18px;
   font-size: 22px;
   font-weight: 500;
   line-height: 26px;
-  letter-spacing: -0.03em;
 }
 
 .texto-solucion {
-  margin: 0 0 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: -0.01em;
   color: #3d4751;
 }
 
 .boton-oscuro {
-  background: #141a20;
-  color: #fff;
+  background-color: #141a20;
+  color: #ffffff;
 }
 
 .lista-solucion {
   list-style: none;
-  margin: 56px 0 0;
+  margin-top: 56px;
+  margin-bottom: 0;
   padding: 0 12px;
 }
 
@@ -388,14 +354,10 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-}
-
-.elemento-solucion + .elemento-solucion {
-  margin-top: 38px;
+  margin-bottom: 38px;
 }
 
 .icono-solucion {
-  flex: none;
   width: 24px;
   font-size: 22px;
   line-height: 24px;
@@ -403,14 +365,13 @@ button {
 }
 
 .enlace-solucion {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 5px;
   color: #0a0e12;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: -0.01em;
   text-decoration: none;
 }
 
@@ -419,35 +380,32 @@ button {
 }
 
 .descripcion-solucion {
-  margin: 11px 0 0;
+  margin-top: 11px;
+  margin-bottom: 0;
   font-size: 15px;
   line-height: 21px;
-  letter-spacing: -0.01em;
   color: #3d4751;
 }
 
-
-/* TESTIMONIOS */
-
 .testimonios {
-  background: #eef2f6;
-  padding: 40px 0 44px;
+  background-color: #eef2f6;
+  padding: 40px 0 44px 0;
 }
 
 .titulo-testimonios {
-  margin: 0 0 28px;
+  margin-top: 0;
+  margin-bottom: 28px;
   font-size: 22px;
   font-weight: 500;
-  letter-spacing: -0.02em;
   text-align: center;
 }
 
 .testimonio {
   width: 300px;
   margin: 0 auto;
-  padding: 30px 26px 26px;
+  padding: 30px 26px 26px 26px;
   border-radius: 20px;
-  background: #fff;
+  background-color: #ffffff;
   text-align: center;
 }
 
@@ -457,11 +415,11 @@ button {
 }
 
 .texto-testimonio {
-  margin: 14px 0 0;
+  margin-top: 14px;
+  margin-bottom: 0;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.3;
-  letter-spacing: -0.02em;
 }
 
 .estrellas-testimonio {
@@ -470,8 +428,8 @@ button {
   font-size: 15px;
 }
 
-.estrellas-testimonio i + i {
-  margin-left: 3px;
+.estrellas-testimonio i {
+  margin: 0 1px;
 }
 
 .autor-testimonio {
@@ -486,14 +444,12 @@ button {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .nombre-testimonio {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 .verificado-testimonio {
@@ -506,13 +462,10 @@ button {
   color: #5b6570;
 }
 
-
-/* IA */
-
 .ia {
-  background: #141a20;
-  color: #fff;
-  padding: 46px 20px 40px;
+  background-color: #141a20;
+  color: #ffffff;
+  padding: 46px 20px 40px 20px;
 }
 
 .titulo-ia {
@@ -521,11 +474,11 @@ button {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 0 0 30px;
+  margin-top: 0;
+  margin-bottom: 30px;
   font-size: 26px;
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.03em;
   text-align: center;
 }
 
@@ -538,40 +491,40 @@ button {
   width: 100%;
   height: 240px;
   border-radius: 18px;
-  object-fit: cover;
 }
 
 .tarjeta-ia {
-  margin: 34px 0 0;
-  padding: 30px 22px 22px;
+  margin-top: 34px;
+  padding: 30px 22px 22px 22px;
   border-radius: 20px;
-  background: #1d242c;
+  background-color: #1d242c;
 }
 
 .titulo-tarjeta-ia {
-  margin: 0 0 18px;
+  margin-top: 0;
+  margin-bottom: 18px;
   font-size: 21px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.02em;
 }
 
 .texto-tarjeta-ia {
-  margin: 0 0 26px;
+  margin-top: 0;
+  margin-bottom: 26px;
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: -0.01em;
   color: #9aa3ad;
 }
 
 .boton-claro {
-  background: #fff;
+  background-color: #ffffff;
   color: #0a0e12;
 }
 
 .acordeon {
   list-style: none;
-  margin: 44px 0 0;
+  margin-top: 44px;
+  margin-bottom: 0;
   padding: 0;
 }
 
@@ -587,21 +540,16 @@ button {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.3;
-  letter-spacing: -0.02em;
 }
 
 .icono-acordeon {
-  flex: none;
   margin-top: 4px;
   font-size: 15px;
   color: #9aa3ad;
 }
 
-
-/* VIDEO FINAL */
-
 .cierre {
-  padding: 40px 20px 40px;
+  padding: 40px 20px;
 }
 
 .video-cierre {
@@ -609,30 +557,26 @@ button {
   width: 100%;
   height: 240px;
   border-radius: 18px;
-  object-fit: cover;
 }
 
-
-/* SEGURIDAD */
-
 .seguridad {
-  padding: 0 24px 50px;
+  padding: 0 24px 50px 24px;
   text-align: center;
 }
 
 .titulo-seguridad {
-  margin: 0 0 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 26px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.03em;
 }
 
 .texto-seguridad {
-  margin: 0 0 26px;
+  margin-top: 0;
+  margin-bottom: 26px;
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: -0.01em;
   color: #4c5864;
 }
 
@@ -645,41 +589,44 @@ button {
   line-height: 1.35;
 }
 
+.seguridad-datos {
+  margin-top: 54px;
+}
+
 .separador-seguridad {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin: 54px 0 34px;
+  margin: 34px 0;
 }
 
 .separador-seguridad span {
   flex: 1;
   height: 1px;
-  background: #cfd6dd;
+  background-color: #cfd6dd;
 }
 
 .separador-seguridad p {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
 }
 
 .rejilla-seguridad {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 40px;
-  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .rejilla-seguridad li {
+  width: 48%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 35px;
 }
 
 .rejilla-seguridad i {
@@ -691,16 +638,12 @@ button {
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: -0.01em;
 }
 
-
-/* COMUNIDAD */
-
 .comunidad {
-  background: #10151b;
-  color: #fff;
-  padding: 0 0 40px;
+  background-color: #10151b;
+  color: #ffffff;
+  padding-bottom: 40px;
 }
 
 .franja-comunidad {
@@ -712,20 +655,26 @@ button {
   flex: 1;
 }
 
+.c1 { background-color: #c7cdd3; }
+.c2 { background-color: #f2a400; }
+.c3 { background-color: #17d5ff; }
+.c4 { background-color: #2f9e44; }
+.c5 { background-color: #e619b0; }
+.c6 { background-color: #e63946; }
+.c7 { background-color: #17d5ff; }
+
 .titulo-comunidad {
-  margin: 34px 24px 20px;
+  margin: 34px 24px 20px 24px;
   font-size: 27px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.03em;
   text-align: center;
 }
 
 .texto-comunidad {
-  margin: 0 26px 30px;
+  margin: 0 26px 30px 26px;
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: -0.01em;
   color: #9aa3ad;
   text-align: center;
 }
@@ -734,8 +683,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20px 26px;
-  color: #fff;
+  margin: 0 20px 26px 20px;
+  color: #ffffff;
   font-size: 17px;
   font-weight: 500;
   text-decoration: none;
@@ -743,19 +692,15 @@ button {
 
 .video-comunidad {
   display: block;
-  width: calc(100% - 40px);
-  margin: 0 20px;
+  width: 90%;
+  margin: 0 auto;
   height: 280px;
   border-radius: 18px;
-  object-fit: cover;
 }
 
-
-/* NOVEDADES */
-
 .novedades {
-  background: #fff;
-  padding: 0 0 40px;
+  background-color: #ffffff;
+  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -768,46 +713,49 @@ button {
   flex: 1;
 }
 
+.g1 { background-color: #e1e5ea; }
+.g2 { background-color: #c7cdd3; }
+.g3 { background-color: #aab2bb; }
+.g4 { background-color: #8b95a1; }
+.g5 { background-color: #5f6a76; }
+.g6 { background-color: #141a20; }
+.g7, .g8 { display: none; }
+
 .titulo-novedades {
-  margin: 44px 24px 28px;
+  margin: 44px 24px 28px 24px;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.03em;
 }
 
 .tarjeta-novedades {
-  margin: 0 16px;
-  padding: 30px 20px 20px;
+  margin: 0 16px 15px 16px;
+  padding: 30px 20px 20px 20px;
   border-radius: 24px;
-  background: #f3f6f9;
-}
-
-.tarjeta-novedades + .tarjeta-novedades {
-  margin-top: 15px;
+  background-color: #f3f6f9;
 }
 
 .etiqueta-novedad {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 20px;
-  background: #17d5ff;
+  background-color: #17d5ff;
   color: #0a0e12;
   font-size: 13px;
   font-weight: 600;
 }
 
 .texto-novedad {
-  margin: 16px 0 0;
+  margin-top: 16px;
+  margin-bottom: 0;
   padding: 0 10px;
   font-size: 17px;
   line-height: 1.4;
-  letter-spacing: -0.01em;
   color: #4c5864;
 }
 
 .boton-novedad {
-  margin: 22px auto 0;
+  margin: 22px auto 0 auto;
   padding: 0 20px;
   border-radius: 16px;
 }
@@ -818,7 +766,6 @@ button {
   height: 223px;
   margin-top: 20px;
   border-radius: 10px;
-  object-fit: cover;
 }
 
 .empezar {
@@ -889,7 +836,8 @@ button {
 }
 
 .soporte p {
-  margin: 14px 0 0 0;
+  margin-top: 14px;
+  margin-bottom: 0;
   font-size: 16px;
   line-height: 27px;
   color: #08122b;
@@ -905,7 +853,7 @@ button {
 }
 
 .soporte .flecha {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .footer {
@@ -913,7 +861,7 @@ button {
 }
 
 .menus {
-  padding: 0 32px 0 32px;
+  padding: 0 32px;
 }
 
 .fila {
@@ -971,7 +919,8 @@ button {
 }
 
 .copy {
-  margin: 34px 0 0 0;
+  margin-top: 34px;
+  margin-bottom: 0;
   font-size: 15px;
   line-height: 22px;
   color: #3a4150;
@@ -1003,7 +952,7 @@ button {
   height: 16px;
   border: 1px solid #1a73e8;
   border-radius: 10px;
-  background-color: white;
+  background-color: #ffffff;
   font-size: 9px;
   line-height: 14px;
   text-align: center;
@@ -1014,76 +963,38 @@ button {
   margin: 0 2px;
 }
 
-.im {
-  max-width: 320px;
-}
-
-.menu-escritorio,
-.acciones-escritorio,
-.descubre {
-  display: none;
-}
-
-/* =========================================================
-   ESCRITORIO (DESKTOP)
-   Todo lo anterior es el diseño móvil y se deja intacto.
-   A partir de aquí, solo reglas dentro de un @media que
-   sobrescriben o añaden estilos a partir de 1024px.
-   ========================================================= */
-
-/* =========================================================
-   ESCRITORIO (DESKTOP)
-   Sustituye TODO lo que tenías desde el comentario
-   "ESCRITORIO (DESKTOP)" hasta el final del archivo.
-   El diseño móvil de arriba queda intacto.
-   ========================================================= */
-
-/* Estos elementos solo existen en escritorio.
-   OJO: tiene que ir ANTES del @media, si va después
-   sobrescribe el display:flex del media y nunca se ven. */
 .menu-escritorio,
 .acciones-escritorio,
 .descubre,
 .boton-plataforma,
 .insignia-solucion,
 .play-solucion,
-.mockup-ia,
+.visor-ia,
 .reproducir-cierre,
 .reproducir-comunidad,
 .contenido-footer {
   display: none;
 }
 
-/* En móvil el rol se ve en dos líneas, sin la barra "/" */
-.rol-solucion span {
-  display: block;
-}
-
-.rol-solucion .separador-rol {
-  display: none;
-}
-
-
 @media (min-width: 1024px) {
 
   .pagina {
-    max-width: 1600px;
+    max-width: 100%;
   }
 
-
-  /* ---------- CABECERA ---------- */
-
   .cabecera {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
     gap: 40px;
     padding: 24px 40px;
   }
 
-  .cabecera > img {
+  .cabecera img {
     height: 28px;
     width: auto;
   }
 
-  /* Ocultamos las acciones móviles (icono + texto apilados) */
   .acciones {
     display: none;
   }
@@ -1097,7 +1008,7 @@ button {
   }
 
   .menu-escritorio a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 6px;
     color: #0a0e12;
@@ -1129,7 +1040,7 @@ button {
     gap: 10px;
     padding: 6px 6px 6px 18px;
     border-radius: 24px;
-    background: #17d5ff;
+    background-color: #17d5ff;
     color: #0a0e12;
     font-size: 15px;
     font-weight: 600;
@@ -1143,8 +1054,8 @@ button {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #0a0e12;
-    color: #fff;
+    background-color: #0a0e12;
+    color: #ffffff;
     font-size: 11px;
   }
 
@@ -1153,18 +1064,17 @@ button {
     color: #0a0e12;
   }
 
-
-  /* ---------- PORTADA ---------- */
-
   .portada {
-    margin: 0 24px;
+    width: 96%;
+    max-width: 1450px;
+    margin: 0 auto;
     min-height: 720px;
     display: flex;
     border-radius: 32px;
   }
 
   .contenido-portada {
-    flex: 1;
+    width: 100%;
     justify-content: center;
     padding: 0 40px;
   }
@@ -1187,8 +1097,8 @@ button {
   }
 
   .acciones-portada {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     gap: 28px;
   }
 
@@ -1203,12 +1113,10 @@ button {
     margin-top: 0;
   }
 
-  /* El botón "Reproducir" solo existe en móvil */
   .reproducir {
     display: none;
   }
 
-  /* La tarjeta "Descubra..." solo existe en escritorio */
   .descubre {
     display: flex;
     align-items: center;
@@ -1219,7 +1127,7 @@ button {
     max-width: 320px;
     padding: 16px 24px 16px 16px;
     border-radius: 20px;
-    background: rgba(230, 230, 230, 0.92);
+    background-color: rgba(230, 230, 230, 0.92);
     color: #0a0e12;
     text-align: left;
     text-decoration: none;
@@ -1227,13 +1135,12 @@ button {
 
   .descubre-play {
     display: flex;
-    flex: none;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: #17d5ff;
+    background-color: #17d5ff;
     color: #0a0e12;
     font-size: 16px;
   }
@@ -1245,11 +1152,8 @@ button {
     line-height: 1.3;
   }
 
-
-  /* ---------- CONFIANZA ---------- */
-
   .confianza {
-    padding: 96px 40px 0;
+    padding: 96px 40px 0 40px;
   }
 
   .titulo-confianza {
@@ -1259,20 +1163,18 @@ button {
   }
 
   .logos {
-    gap: 80px;
-    margin-top: 56px;
+    max-width: 1200px;
+    margin: 56px auto 0 auto;
   }
 
-  .logos img {
+  .pista-logos img {
     width: 150px;
+    margin-right: 80px;
   }
-
-
-  /* ---------- CARACTERISTICAS ---------- */
 
   .caracteristicas {
     margin-top: 40px;
-    padding: 96px 40px 110px;
+    padding: 96px 40px 110px 40px;
   }
 
   .titulo-caracteristicas {
@@ -1294,31 +1196,29 @@ button {
     padding: 0 24px;
   }
 
-
-  /* ---------- PLATAFORMA (rejilla de 3 columnas) ---------- */
-
   .plataforma {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 64px;
-    row-gap: 72px;
-    padding: 110px 40px 130px;
+    width: 100%;
+    padding: 110px 40px 130px 40px;
   }
 
   .titulo-plataforma {
-    grid-column: 1 / -1;
-    margin: 0 0 24px;
+    max-width: 1400px;
+    margin: 0 auto 60px auto;
     font-size: 56px;
     line-height: 1.05;
   }
 
-  .elemento {
+  .contenedor-elementos {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  .elemento + .elemento {
-    margin-top: 0;
+  .elemento {
+    width: 30%;
+    margin-bottom: 72px;
   }
 
   .video-plataforma {
@@ -1331,13 +1231,11 @@ button {
     padding: 0;
   }
 
-  /* En escritorio el título no lleva flecha */
   .enlace-plataforma {
     display: block;
     margin-top: 40px;
     font-size: 29px;
     line-height: 34px;
-    letter-spacing: -0.03em;
   }
 
   .enlace-plataforma i {
@@ -1357,8 +1255,8 @@ button {
     margin-top: 40px;
     padding: 22px 26px;
     border-radius: 14px;
-    background: #2a323c;
-    color: #fff;
+    background-color: #2a323c;
+    color: #ffffff;
     font-size: 19px;
     font-weight: 500;
     line-height: 26px;
@@ -1366,52 +1264,44 @@ button {
   }
 
   .boton-plataforma i {
-    flex: none;
     margin-left: 16px;
     font-size: 17px;
   }
 
-
-  /* ---------- SOLUCION ----------
-     Título, texto y botón arriba; debajo, imagen a la izquierda
-     (con la tarjeta de autor encima) y lista en UNA columna. */
-
   .solucion {
-    display: grid;
-    grid-template-columns: 648px 1fr;
-    column-gap: 63px;
     width: 100%;
     max-width: 1456px;
     margin: 0 auto;
-    padding: 110px 40px 130px;
+    padding: 110px 40px 130px 40px;
+  }
+
+  .cuerpo-solucion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 63px;
   }
 
   .titulo-solucion {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    margin: 0 0 24px;
+    margin-top: 0;
+    margin-bottom: 24px;
     font-size: 44px;
     line-height: 50px;
-    letter-spacing: -0.04em;
   }
 
   .texto-solucion {
-    grid-column: 1 / -1;
-    grid-row: 2;
     max-width: 975px;
-    margin: 0 0 45px;
+    margin-bottom: 45px;
     font-size: 20px;
     line-height: 31px;
     color: #4c5864;
   }
 
-  .solucion > .boton {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    justify-self: start;
+  .cabecera-solucion .boton {
     width: auto;
     max-width: none;
     height: 54px;
+    display: inline-flex;
     gap: 15px;
     margin-bottom: 63px;
     padding: 0 21px;
@@ -1420,8 +1310,7 @@ button {
   }
 
   .visor-solucion {
-    grid-column: 1;
-    grid-row: 4;
+    width: 648px;
     position: relative;
     min-height: 880px;
   }
@@ -1445,22 +1334,19 @@ button {
     gap: 15px;
     padding: 18px 21px;
     border-radius: 18px;
-    background: rgba(205, 200, 192, 0.65);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    background-color: rgba(205, 200, 192, 0.85);
     color: #0a0e12;
   }
 
   .insignia-solucion {
     display: flex;
-    flex: none;
     align-items: center;
     justify-content: center;
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: #0a0e12;
-    color: #fff;
+    background-color: #0a0e12;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 800;
   }
@@ -1469,7 +1355,6 @@ button {
     margin: 0;
     font-size: 21px;
     font-weight: 500;
-    white-space: nowrap;
   }
 
   .rol-solucion {
@@ -1493,33 +1378,27 @@ button {
 
   .play-solucion {
     display: flex;
-    flex: none;
     align-items: center;
     justify-content: center;
     width: 90px;
     height: 51px;
     margin-left: auto;
     border-radius: 9px;
-    background: #17d5ff;
+    background-color: #17d5ff;
     color: #0a0e12;
     font-size: 20px;
     text-decoration: none;
   }
 
   .lista-solucion {
-    grid-column: 2;
-    grid-row: 4;
-    display: block;
+    flex: 1;
     margin: 0;
     padding: 0;
   }
 
   .elemento-solucion {
     gap: 34px;
-  }
-
-  .elemento-solucion + .elemento-solucion {
-    margin-top: 52px;
+    margin-bottom: 52px;
   }
 
   .icono-solucion {
@@ -1545,11 +1424,9 @@ button {
     color: #4c5864;
   }
 
-
-  /* ---------- TESTIMONIOS ---------- */
-
   .testimonios {
-    padding: 96px 0 110px;
+    width: 100%;
+    padding: 96px 0 110px 0;
   }
 
   .titulo-testimonios {
@@ -1559,7 +1436,7 @@ button {
 
   .testimonio {
     width: 620px;
-    padding: 48px 56px 40px;
+    padding: 48px 56px 40px 56px;
     border-radius: 28px;
   }
 
@@ -1591,28 +1468,31 @@ button {
     font-size: 16px;
   }
 
-
-  /* ---------- IA ---------- */
-
   .ia {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    column-gap: 80px;
-    align-items: start;
-    padding: 70px 40px 110px;
+    width: 100%;
+    padding: 70px 40px 110px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .ia-izquierda {
+    width: 48%;
+    max-width: 680px;
+  }
+
+  .visor-ia-movil {
+    display: none;
   }
 
   .titulo-ia {
-    grid-column: 1;
-    grid-row: 1;
     position: relative;
     display: block;
-    margin: 0 0 50px;
+    margin-bottom: 50px;
     padding-left: 70px;
-    font-size: clamp(44px, 3.6vw, 58px);
-    line-height: 1.0;
-    letter-spacing: -0.04em;
+    font-size: 52px;
+    line-height: 1.05;
     text-align: left;
   }
 
@@ -1621,29 +1501,24 @@ button {
     top: 0;
     left: 0;
     font-size: 56px;
-    line-height: 1;
   }
 
   .tarjeta-ia {
-    grid-column: 1;
-    grid-row: 2;
-    display: block;
-    margin: 0 0 0 26px;
-    padding: 50px 40px 30px;
+    margin-top: 0;
+    margin-left: 26px;
+    padding: 50px 40px 30px 40px;
     border-radius: 26px;
-    background: #1a2129;
+    background-color: #1a2129;
   }
 
   .titulo-tarjeta-ia {
-    margin: 0 0 12px;
+    margin-bottom: 12px;
     font-size: 22px;
     line-height: 28px;
-    letter-spacing: -0.02em;
   }
 
   .texto-tarjeta-ia {
-    max-width: 680px;
-    margin: 0 0 30px;
+    margin-bottom: 30px;
     font-size: 21px;
     line-height: 35px;
     color: #a3aab2;
@@ -1661,16 +1536,12 @@ button {
   }
 
   .acordeon {
-    grid-column: 1;
-    grid-row: 3;
-    display: block;
-    margin: 12px 0 0;
+    margin-top: 12px;
     padding: 0 46px 0 66px;
   }
 
   .elemento-acordeon {
     padding: 25px 0;
-    border-top: 0;
     cursor: pointer;
   }
 
@@ -1683,108 +1554,43 @@ button {
   .icono-acordeon {
     margin-top: 6px;
     font-size: 20px;
-    color: #fff;
+    color: #ffffff;
   }
 
   .visor-ia {
-    grid-column: 2;
-    grid-row: 1 / span 4;
-    align-self: start;
+    display: block;
+    width: 48%;
+    max-width: 680px;
   }
 
-  .video-ia {
+  .visor-ia .video-ia {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    height: 380px;
     border-radius: 22px;
   }
 
-  .mockup-ia {
-    position: relative;
-    display: block;
-    height: 122px;
+  .caja-blanca-ia {
+    height: 110px;
     margin-top: 25px;
+    padding: 20px;
     border-radius: 20px;
-    background: #fff;
+    background-color: #ffffff;
   }
 
-  .mockup-titulo {
-    position: absolute;
-    top: 12px;
-    left: 22px;
-    width: 365px;
-    height: 35px;
-    border-radius: 5px;
-    background: #cdd2da;
+  .linea-gris-grande {
+    width: 60%;
+    height: 32px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    background-color: #cdd2da;
   }
 
-  .mockup-subtitulo {
-    position: absolute;
-    top: 54px;
-    left: 22px;
-    width: 89px;
-    height: 9px;
-    border-radius: 4px;
-    background: #cdd2da;
+  .linea-gris-pequena {
+    width: 25%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #cdd2da;
   }
-
-  .mockup-iconos {
-    position: absolute;
-    left: 22px;
-    right: 30px;
-    bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #2c333b;
-    font-size: 12px;
-  }
-
-  .mockup-izq,
-  .mockup-der {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-  }
-
-  .mockup-iconos small {
-    margin-left: -5px;
-    font-size: 10px;
-    font-weight: 600;
-  }
-
-  .mockup-der b {
-    width: 58px;
-    height: 9px;
-    margin-left: -4px;
-    border-radius: 4px;
-    background: #cdd2da;
-  }
-
-
-  /* ---------- ORDEN EN ESCRITORIO ----------
-     En móvil el video va ANTES de "Seguridad"; en escritorio va
-     DESPUÉS. Se cambia solo con CSS (order) sin tocar el HTML. */
-
-  .pagina {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .seguridad { order: 1; }
-  .cierre    { order: 2; }
-
-  .comunidad,
-  .novedades,
-  .empezar,
-  .soporte,
-  .footer {
-    order: 3;
-  }
-
-
-  /* ---------- SEGURIDAD ----------
-     Medidas tomadas de la captura al 100 % de zoom. */
 
   .seguridad {
     display: flex;
@@ -1793,26 +1599,22 @@ button {
     width: 100%;
     max-width: 1232px;
     margin: 0 auto;
-    padding: 56px 40px 58px;
+    padding: 80px 40px 58px 40px;
     text-align: left;
   }
 
   .seguridad-texto {
-    flex: none;
     width: 558px;
   }
 
   .titulo-seguridad {
-    max-width: none;
-    margin: 0 0 24px;
+    margin-bottom: 24px;
     font-size: 44px;
-    line-height: 40px;
-    letter-spacing: -0.04em;
+    line-height: 44px;
   }
 
   .texto-seguridad {
-    max-width: none;
-    margin: 0 0 40px;
+    margin-bottom: 40px;
     font-size: 18px;
     line-height: 28px;
   }
@@ -1829,24 +1631,13 @@ button {
   }
 
   .seguridad-datos {
-    flex: none;
     width: 516px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: start;
+    margin-top: 0;
   }
 
-  /* Los <li> pasan a ser celdas de .seguridad-datos */
-  .rejilla-seguridad {
-    display: contents;
-  }
-
-  .rejilla-seguridad li:nth-child(-n+3) {
-    grid-row: 1;
-  }
-
-  .rejilla-seguridad li:nth-child(n+4) {
-    grid-row: 3;
+  .rejilla-seguridad li {
+    width: 32%;
+    margin-bottom: 0;
   }
 
   .rejilla-seguridad i {
@@ -1855,26 +1646,25 @@ button {
   }
 
   .rejilla-seguridad span {
-    max-width: 106px;
+    max-width: 110px;
     font-size: 18px;
     line-height: 25px;
     text-align: center;
   }
 
-  .rejilla-seguridad li:first-child span {
+  .sin-salto {
+    max-width: none;
     white-space: nowrap;
   }
 
   .separador-seguridad {
-    grid-column: 1 / -1;
-    grid-row: 2;
     gap: 21px;
-    margin: 31px 28px 34px;
+    margin: 31px 28px 34px 28px;
   }
 
   .separador-seguridad span {
     height: 3px;
-    background: #0a0e12;
+    background-color: #0a0e12;
   }
 
   .separador-seguridad p {
@@ -1882,14 +1672,11 @@ button {
     line-height: 24px;
   }
 
-
-  /* ---------- VIDEO FINAL ---------- */
-
   .cierre {
     position: relative;
-    width: 100%;
+    width: 96%;
     max-width: 1376px;
-    margin: 0 auto 57px;
+    margin: 0 auto 57px auto;
     padding: 0;
   }
 
@@ -1909,7 +1696,7 @@ button {
     height: 110px;
     padding: 0 21px;
     border-radius: 12px;
-    background: rgba(170, 170, 170, 0.85);
+    background-color: rgba(170, 170, 170, 0.85);
     color: #0a0e12;
     font-size: 16px;
     font-weight: 500;
@@ -1919,41 +1706,37 @@ button {
 
   .play-cierre {
     display: flex;
-    flex: none;
     align-items: center;
     justify-content: center;
     width: 81px;
     height: 45px;
     border-radius: 12px;
-    background: #17d5ff;
+    background-color: #17d5ff;
     font-size: 18px;
   }
 
-
-  /* ---------- COMUNIDAD ----------
-     Franja de colores arriba; debajo, imagen a la izquierda
-     (con tarjeta encima) y título + texto + enlace a la derecha. */
-
   .comunidad {
-    display: grid;
-    grid-template-columns: 577px 1fr;
-    grid-template-rows: auto auto auto auto 1fr;
-    column-gap: 56px;
-    align-content: start;
-    padding: 0 max(40px, calc((100% - 1212px) / 2)) 56px;
-    background: #141a20;
+    width: 100%;
+    padding-bottom: 56px;
+    background-color: #141a20;
   }
 
   .franja-comunidad {
-    grid-column: 1 / -1;
-    grid-row: 1;
     height: 16px;
     margin-bottom: 56px;
   }
 
+  .cuerpo-comunidad {
+    max-width: 1212px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+  }
+
   .visor-comunidad {
-    grid-column: 1;
-    grid-row: 2 / span 4;
+    width: 577px;
     position: relative;
   }
 
@@ -1975,10 +1758,8 @@ button {
     height: 93px;
     padding: 0 24px;
     border-radius: 14px;
-    background: rgba(214, 209, 193, 0.82);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    color: #f2f1ea;
+    background-color: rgba(214, 209, 193, 0.9);
+    color: #0a0e12;
     font-size: 16px;
     font-weight: 500;
     line-height: 21px;
@@ -1987,45 +1768,37 @@ button {
 
   .play-comunidad {
     display: flex;
-    flex: none;
     align-items: center;
     justify-content: center;
     width: 80px;
     height: 45px;
     border-radius: 12px;
-    background: #17d5ff;
+    background-color: #17d5ff;
     color: #0a0e12;
     font-size: 18px;
   }
 
+  .info-comunidad {
+    flex: 1;
+  }
+
   .titulo-comunidad {
-    grid-column: 2;
-    grid-row: 2;
-    max-width: none;
-    margin: 0 0 20px;
+    margin: 0 0 20px 0;
     font-size: 46px;
-    line-height: 40px;
-    letter-spacing: -0.04em;
+    line-height: 46px;
     text-align: left;
   }
 
   .texto-comunidad {
-    grid-column: 2;
-    grid-row: 3;
-    max-width: none;
-    margin: 0 0 35px;
+    margin: 0 0 35px 0;
     font-size: 19px;
     line-height: 28px;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     text-align: left;
   }
 
   .enlace-comunidad {
-    grid-column: 2;
-    grid-row: 4;
-    align-self: start;
-    justify-content: space-between;
     width: 100%;
     height: 56px;
     margin: 0;
@@ -2033,37 +1806,45 @@ button {
     font-size: 17px;
   }
 
-
-  /* ---------- NOVEDADES (2 tarjetas en fila) ---------- */
-
   .novedades {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 24px;
-    padding: 0 40px 110px;
+    width: 100%;
+    padding-bottom: 110px;
   }
 
   .barra-novedades {
-    grid-column: 1 / -1;
-    margin: 0 -40px;
+    height: 16px;
   }
 
+  .g1 { background-color: #fbfcfe; }
+  .g2 { background-color: #e1e5ea; }
+  .g3 { background-color: #c5d0dc; }
+  .g4 { background-color: #939eac; }
+  .g5 { background-color: #646f7c; }
+  .g6 { background-color: #3a4452; }
+  .g7 { display: block; background-color: #252d38; }
+  .g8 { display: block; background-color: #1a2029; }
+
   .titulo-novedades {
-    grid-column: 1 / -1;
-    margin: 88px 0 48px;
+    margin: 88px 0 48px 0;
     font-size: 48px;
   }
 
+  .contenedor-tarjetas-novedades {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
   .tarjeta-novedades {
+    width: 49%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 40px 32px 32px;
-  }
-
-  .tarjeta-novedades + .tarjeta-novedades {
-    margin-top: 0;
+    padding: 40px 32px 32px 32px;
   }
 
   .texto-novedad {
@@ -2083,36 +1864,38 @@ button {
     border-radius: 14px;
   }
 
-
-  /* ---------- PROBAR GRATIS + ATENCIÓN AL CLIENTE (en una fila) ---------- */
-
   .pre-footer {
-    order: 3;
-    display: grid;
-    grid-template-columns: 5.6fr 4.4fr;
-    align-items: start;
-    padding: 72px max(40px, calc((100% - 1340px) / 2)) 0;
+    width: 100%;
+    max-width: 1340px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 72px 40px 0 40px;
   }
 
-  .empezar,
+  .empezar {
+    width: 55%;
+    padding: 0;
+  }
+
   .soporte {
+    width: 42%;
     padding: 0;
   }
 
   .empezar h2 {
     font-size: 44px;
     line-height: 48px;
-    letter-spacing: -0.03em;
   }
 
   .enlaces {
-    display: block;
-    margin: 10px 0 0;
+    margin-top: 10px;
   }
 
   .enlaces a {
     font-size: 17px;
-    line-height: 22.5px;
+    line-height: 22px;
     color: #08122b;
   }
 
@@ -2122,8 +1905,8 @@ button {
 
   .empezar .unirse,
   .soporte .unirse {
-    display: flex;
-    width: fit-content;
+    display: inline-flex;
+    width: auto;
     height: 56px;
     gap: 16px;
     margin-top: 16px;
@@ -2135,34 +1918,39 @@ button {
     margin-top: 6px;
     font-size: 26px;
     line-height: 32px;
-    letter-spacing: -0.03em;
   }
 
   .soporte p {
     max-width: 460px;
-    margin: 14px 0 0;
+    margin-top: 14px;
     font-size: 16px;
     line-height: 27px;
   }
 
-
-  /* ---------- FOOTER ---------- */
-
   .footer {
-    display: grid;
-    grid-template-columns: 465px 1fr;
-    align-items: start;
-    padding: 46px max(40px, calc((100% - 1340px) / 2)) 40px;
-    border-top: 0;
+    width: 100%;
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 46px 40px 40px 40px;
   }
 
   .menus {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 839px 277px 1fr;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 56px;
     padding: 0;
+  }
+
+  .col-producto {
+    width: 65%;
+  }
+
+  .col-recursos {
+    width: 20%;
+  }
+
+  .col-empresa {
+    width: 15%;
   }
 
   .fila {
@@ -2176,22 +1964,25 @@ button {
   .fila h3 {
     font-size: 26px;
     line-height: 32px;
-    letter-spacing: -0.02em;
   }
 
-  /* Listas de enlaces (solo escritorio) */
   .contenido-footer {
     display: block;
     margin-top: 21px;
   }
 
   .contenido-producto {
-    display: grid;
-    grid-template-columns: 192px 256px 235px 1fr;
+    display: flex;
+    justify-content: space-between;
   }
 
+  .g-prod-1 { width: 22%; }
+  .g-prod-2 { width: 28%; }
+  .g-prod-3 { width: 28%; }
+  .g-prod-4 { width: 16%; }
+
   .grupo-footer h4 {
-    margin: 0 0 2px;
+    margin: 0 0 2px 0;
     font-size: 16px;
     font-weight: 600;
     line-height: 25px;
@@ -2206,38 +1997,21 @@ button {
     text-decoration: none;
   }
 
-  .contenido-producto .grupo-footer:nth-child(1) { max-width: 170px; }
-  .contenido-producto .grupo-footer:nth-child(2) { max-width: 200px; }
-  .contenido-producto .grupo-footer:nth-child(3) { max-width: 200px; }
-  .contenido-producto .grupo-footer:nth-child(4) { max-width: 110px; }
-
-  .columna-footer:not(:first-child) .grupo-footer {
+  .grupo-estrecho {
     max-width: 185px;
   }
 
-  /* Fila inferior: redes + idioma a la izquierda; copyright y legal a la derecha */
-  .copy {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 0;
-    font-size: 16px;
-    line-height: 31px;
-  }
-
-  .legal {
-    grid-column: 2;
-    grid-row: 3;
-    margin: 0;
-    font-size: 16px;
-    line-height: 31px;
+  .footer-abajo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   .redes {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: center;
+    width: 465px;
     justify-content: flex-start;
-    margin: 0;
+    margin-top: 0;
+    padding-bottom: 4px;
   }
 
   .iconos a {
@@ -2249,55 +2023,20 @@ button {
     font-size: 16px;
   }
 
-  /* ---------- FONDOS A TODO EL ANCHO ----------
-     La página tiene un ancho máximo, pero los fondos de color
-     ocupan toda la pantalla (igual que en la web real). */
-
-  body {
-    overflow-x: hidden;
+  .footer-legal-derecha {
+    flex: 1;
   }
 
-  .plataforma,
-  .ia,
-  .testimonios,
-  .comunidad,
-  .novedades {
-    clip-path: inset(0 -100vmax);
+  .copy {
+    margin: 0;
+    font-size: 16px;
+    line-height: 31px;
   }
 
-  .plataforma  { box-shadow: 0 0 0 100vmax #141a20; }
-  .ia          { box-shadow: 0 0 0 100vmax #141a20; }
-  .testimonios { box-shadow: 0 0 0 100vmax #eef2f6; }
-  .comunidad   { box-shadow: 0 0 0 100vmax #141a20; }
-  .novedades   { box-shadow: 0 0 0 100vmax #fff; }
-
-  .franja-comunidad {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
-
-  .barra-novedades {
-    width: 100vw;
-    margin: 0 0 0 calc(50% - 50vw);
-  }
-
-  /* Barra de grises: en escritorio son 8 tramos (se dibuja con un
-     degradado y se ocultan los 6 <span> del móvil). */
-  .barra-novedades {
-    height: 16px;
-    background: linear-gradient(to right,
-      #fbfcfe 0 12.5%,
-      #e1e5ea 12.5% 25%,
-      #c5d0dc 25% 37.5%,
-      #939eac 37.5% 50%,
-      #646f7c 50% 62.5%,
-      #3a4452 62.5% 75%,
-      #252d38 75% 87.5%,
-      #1a2029 87.5% 100%);
-  }
-
-  .barra-novedades span {
-    display: none;
+  .legal {
+    margin: 0;
+    font-size: 16px;
+    line-height: 31px;
   }
 
 }
